@@ -17,6 +17,9 @@ import imgPostgres from "./image/icons/postgres.png";
 import getCatHtml from "./RainbowCat/getCatHtml";
 import useRainbowCat from "./RainbowCat/useRainbowCat";
 import useConsoleMessage from "./hooks/useConsoleMessage";
+import imgLinkedIn from "./image/social/linkedin.png";
+import imgEmail from "./image/social/email.png";
+import imgGithubIcon from "./image/social/github.png";
 
 const TECH_STACK_ICONS = [
   imgPython,
@@ -144,13 +147,14 @@ function App() {
         <section className="container min-h-screen md:h-[600px] flex flex-col md:flex-row gap-10 md:gap-20 items-center py-20">
           <img src={imgProfile} className="md:w-1/3" />
           <article className="md:w-2/3">
-            <p className="md:text-2xl md:py-20">
+            <p className="md:text-2xl">
               Whether you're looking to build a new software application,
               improve an existing one, or troubleshoot a problem, I'm here to
               help.{" "}
               <strong>
                 <a
                   href="mailto:dave.hrdlicka@gmail.com"
+                  target="_blank"
                   className="text-orange-600 hover:underline"
                 >
                   Contact me
@@ -159,9 +163,33 @@ function App() {
               to discuss your project and how I can assist you in achieving your
               goals.
             </p>
+            <div className="flex flex-row gap-5 justify-center pt-10">
+              <a
+                className="bg-rose-100 rounded-full p-1 hover:scale-110 transition-transform w-[40px]"
+                href="https://www.linkedin.com/in/dave-hrdlicka-0a769894/"
+                target="_blank"
+              >
+                <img src={imgLinkedIn} alt="LinkedIn" />
+              </a>
+              <a
+                className="bg-rose-100 rounded-full p-1 hover:scale-110 transition-transform w-[40px]"
+                href="mailto:dave.hrdlicka@gmail.com"
+                target="_blank"
+              >
+                <img src={imgEmail} alt="Email" />
+              </a>
+              <a
+                className="bg-rose-100 rounded-full p-1 hover:scale-110 transition-transform w-[40px]"
+                href="https://github.com/czechdave"
+                target="_blank"
+              >
+                <div className="bg-white rounded-full">
+                  <img src={imgGithubIcon} alt="Github" />
+                </div>
+              </a>
+            </div>
           </article>
         </section>
-
         <p className="text-center py-10 md:text-xl">
           Or just play with some rainbow cats:&nbsp;&nbsp;
           <button
