@@ -17,7 +17,7 @@ import imgPostgres from "./image/icons/postgres.png";
 import getCatHtml from "./RainbowCat/getCatHtml";
 import useRainbowCat from "./RainbowCat/useRainbowCat";
 import useConsoleMessage from "./hooks/useConsoleMessage";
-import imgLinkedIn from "./image/social/linkedin.png";
+import imgLinkedIn from "./image/social/lin.png";
 import imgEmail from "./image/social/email.png";
 import imgGithubIcon from "./image/social/github.png";
 
@@ -169,7 +169,7 @@ function App() {
                 href="https://www.linkedin.com/in/dave-hrdlicka-0a769894/"
                 target="_blank"
               >
-                <img src={imgLinkedIn} alt="LinkedIn" />
+                <img src={imgLinkedIn} alt="Lin" />
               </a>
               <a
                 className="bg-rose-100 rounded-full p-1 hover:scale-110 transition-transform w-[40px]"
