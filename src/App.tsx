@@ -154,7 +154,6 @@ function App() {
               <strong>
                 <a
                   href="mailto:dave.hrdlicka@gmail.com"
-                  target="_blank"
                   className="text-orange-600 hover:underline"
                 >
                   Contact me
@@ -174,7 +173,6 @@ function App() {
               <a
                 className="bg-rose-100 rounded-full p-1 hover:scale-110 transition-transform w-[40px]"
                 href="mailto:dave.hrdlicka@gmail.com"
-                target="_blank"
               >
                 <img src={imgEmail} alt="Email" />
               </a>
