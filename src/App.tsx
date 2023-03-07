@@ -14,6 +14,9 @@ import imgReact from "./image/icons/REACT.png";
 import imgNodeJS from "./image/icons/NODE_JS.png";
 import imgGraphQL from "./image/icons/GRAPHQL.png";
 import imgPostgres from "./image/icons/postgres.png";
+import getCatHtml from "./RainbowCat/getCatHtml";
+import useRainbowCat from "./RainbowCat/useRainbowCat";
+import useConsoleMessage from "./hooks/useConsoleMessage";
 
 const TECH_STACK_ICONS = [
   imgPython,
@@ -30,7 +33,10 @@ const TECH_STACK_ICONS = [
 const YEARS_OF_EXPERIENCE = new Date().getUTCFullYear() - 2015;
 
 function App() {
+  useConsoleMessage();
+
   const hackerImageRef = useMoveElementOnMouseMove();
+  const summonRainbowCat = useRainbowCat();
 
   let iconsAngle = 0;
   const angleIncrement = (2 * Math.PI) / TECH_STACK_ICONS.length;
@@ -63,7 +69,7 @@ function App() {
           </div>
         </section>
       </div>
-      <div className="bg-slate-900 drop-shadow-[0px_500px_0px_rgba(15,23,42,1)] shadow-slate-900">
+      <div className="bg-slate-900 drop-shadow-[0px_500px_0px_rgb(15,23,42)] shadow-slate-900">
         <div className="overflow-hidden">
           <section className="container min-h-screen md:h-[600px] flex flex-col md:flex-row-reverse gap-20 items-center py-20">
             <article className="md:w-2/3">
@@ -155,6 +161,19 @@ function App() {
             </p>
           </article>
         </section>
+
+        <p className="text-center py-10 md:text-xl">
+          Or just play with some rainbow cats:&nbsp;&nbsp;
+          <button
+            className="w-12 h-8 rounded-full bg-fuchsia-900 relative overflow-hidden align-middle"
+            onClick={summonRainbowCat}
+          >
+            <div
+              className="scale-[20%] translate-x-[20px]"
+              dangerouslySetInnerHTML={{ __html: getCatHtml() }}
+            />
+          </button>
+        </p>
       </div>
     </div>
   );
