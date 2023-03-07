@@ -1,78 +1,34 @@
-import { useLayoutEffect, useRef } from "react";
+import useMoveElementOnMouseMove from "./hooks/useMoveElementOnMouseMove";
+import imgBackground from "./image/background.png";
+import imgHacker from "./image/hacker.png";
+import imgBackpack from "./image/bagpack.png";
+import imgTeam from "./image/team.jpeg";
+import imgProfile from "./image/profile.png";
+import imgPython from "./image/icons/PYTHON.png";
+import imgGIT from "./image/icons/GIT.png";
+import imgGithub from "./image/icons/GITHUB.png";
+import imgTypeScript from "./image/icons/TYPESCRIPT.png";
+import imgHTML5 from "./image/icons/HTML5.png";
+import imgTerraform from "./image/icons/TERRAFORM.png";
+import imgReact from "./image/icons/REACT.png";
+import imgNodeJS from "./image/icons/NODE_JS.png";
+import imgGraphQL from "./image/icons/GRAPHQL.png";
+import imgPostgres from "./image/icons/postgres.png";
 
-const MAX_IMAGE_SHIFT = 50;
-const YEARS_OF_EXPERIENCE = new Date().getUTCFullYear() - 2015;
 const TECH_STACK_ICONS = [
-  "PYTHON",
-  "GIT",
-  "GITHUB",
-  "TYPESCRIPT",
-  "HTML5",
-  "TERRAFORM",
-  "REACT",
-  "NODE_JS",
-  "GRAPHQL",
+  imgPython,
+  imgGIT,
+  imgGithub,
+  imgTypeScript,
+  imgHTML5,
+  imgTerraform,
+  imgReact,
+  imgNodeJS,
+  imgGraphQL,
+  imgPostgres,
 ];
 const TECH_STACK_ICONS_RADIUS = 200;
-
-const getElementCenterCoordinates = (element: HTMLElement) => {
-  const rect = element.getBoundingClientRect();
-  return {
-    x: rect.x + rect.width / 2,
-    y: rect.y + rect.height / 2,
-  };
-};
-
-const useMoveElementOnMouseMove = () => {
-  const elementRef = useRef<HTMLImageElement>(null);
-  const centerRef = useRef<{ x: number; y: number } | null>(null);
-
-  useLayoutEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      if (elementRef.current == null) {
-        return;
-      }
-
-      if (centerRef.current == null) {
-        centerRef.current = getElementCenterCoordinates(elementRef.current);
-      }
-
-      const screenSize = { x: window.innerWidth, y: window.innerHeight };
-      const imageCenter = centerRef.current;
-      const mouseImageDistance = {
-        x: e.x - imageCenter.x,
-        y: e.y - imageCenter.y,
-      };
-      const minX = -imageCenter.x;
-      const maxX = screenSize.x - imageCenter.x;
-      const minY = -imageCenter.y;
-      const maxY = screenSize.y - imageCenter.y;
-
-      const mouseImageDistanceNormal = {
-        x:
-          mouseImageDistance.x > 0
-            ? -mouseImageDistance.x / maxX
-            : mouseImageDistance.x / minX,
-        y:
-          mouseImageDistance.y > 0
-            ? -mouseImageDistance.y / maxY
-            : mouseImageDistance.y / minY,
-      };
-
-      elementRef.current.style.transform = `translate(${
-        MAX_IMAGE_SHIFT * mouseImageDistanceNormal.x
-      }px, ${MAX_IMAGE_SHIFT * mouseImageDistanceNormal.y}px)`;
-    };
-
-    window.addEventListener("mousemove", onMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", onMouseMove);
-    };
-  }, []);
-
-  return elementRef;
-};
+const YEARS_OF_EXPERIENCE = new Date().getUTCFullYear() - 2015;
 
 function App() {
   const hackerImageRef = useMoveElementOnMouseMove();
@@ -83,7 +39,7 @@ function App() {
   return (
     <div>
       <img
-        src="/src/image/background.png"
+        src={imgBackground}
         className="h-screen w-screen object-cover object-bottom fixed -z-10"
       />
       <section className="h-screen bg-transparent">
@@ -91,7 +47,7 @@ function App() {
           <div className="h-full flex flex-col justify-end pb-20">
             <img
               className="w-2/3 self-center"
-              src="/src/image/hacker.png"
+              src={imgHacker}
               ref={hackerImageRef}
               alt="Hacking Dave"
             />
@@ -107,18 +63,18 @@ function App() {
       <div className="bg-slate-900 drop-shadow-[0px_500px_0px_rgba(15,23,42,1)] shadow-slate-900">
         <section className="container h-screen flex gap-32 items-center">
           <div className="w-1/3 relative">
-            <img src="/src/image/bagpack.png" className="w-1/2 mx-auto" />
+            <img src={imgBackpack} className="w-1/2 mx-auto" />
             <div className="animate-spin-icons absolute top-1/2 left-1/2">
-              {TECH_STACK_ICONS.map((name, i) => {
+              {TECH_STACK_ICONS.map((imgURL, i) => {
                 const x = TECH_STACK_ICONS_RADIUS * Math.cos(iconsAngle) - 40;
                 const y = TECH_STACK_ICONS_RADIUS * Math.sin(iconsAngle) - 40;
                 iconsAngle += angleIncrement;
 
                 return (
                   <img
-                    key={name}
+                    key={imgURL}
                     className={`absolute animate-spin-icons-rev w-20 max-w-none`}
-                    src={`/src/image/icons/${name}.png`}
+                    src={imgURL}
                     style={{
                       left: `${x}px`,
                       top: `${y}px`,
@@ -166,11 +122,11 @@ function App() {
                 project goals and has the resources they need to be successful.
               </p>
             </article>
-            <img src="/src/image/team.png" className="w-1/3" />
+            <img src={imgTeam} className="w-1/3" />
           </section>
         </div>
         <section className="container h-screen flex gap-32 items-center">
-          <img src="/src/image/profile_transparent.png" className="w-1/3" />
+          <img src={imgProfile} className="w-1/3" />
           <article className="w-2/3 py-10">
             <p className="text-2xl">
               Whether you're looking to build a new software application,
