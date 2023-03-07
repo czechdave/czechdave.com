@@ -61,11 +61,11 @@ const useRainbowCat = () => {
       // Fly
       if (flyFromLeft) {
         // left => right
-        cat.style.transform = `scale(0.7) rotate(${signB}${r}deg) translate(${x}px, ${signA}${y}0px)`;
+        cat.style.transform = `scale(0.7) rotateZ(${signB}${r}deg) translate(${x}px, ${signA}${y}px)`;
       } else {
         // right => left
         cat.style.right = `0px`;
-        cat.style.transform = `scale(0.7) rotate(${signA}${r}deg) translate(${-x}px, ${signA}${y}0px) rotateY(180deg)`;
+        cat.style.transform = `scale(0.7) rotateZ(${signA}${r}deg) translate(${-x}px, ${signA}${y}px) rotateY(180deg)`;
       }
 
       // Fade out
