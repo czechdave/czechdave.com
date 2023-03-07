@@ -6,7 +6,6 @@ import imgTeam from "./image/team.jpeg";
 import imgProfile from "./image/profile.png";
 import imgPython from "./image/icons/PYTHON.png";
 import imgGIT from "./image/icons/GIT.png";
-import imgGithub from "./image/icons/GITHUB.png";
 import imgTypeScript from "./image/icons/TYPESCRIPT.png";
 import imgHTML5 from "./image/icons/HTML5.png";
 import imgTerraform from "./image/icons/TERRAFORM.png";
@@ -24,7 +23,6 @@ import imgGithubIcon from "./image/social/github.png";
 const TECH_STACK_ICONS = [
   imgPython,
   imgGIT,
-  imgGithub,
   imgTypeScript,
   imgHTML5,
   imgTerraform,
