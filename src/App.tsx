@@ -189,7 +189,7 @@ function App() {
         <p className="text-center py-10 md:text-xl">
           Or just play with some rainbow cats:&nbsp;&nbsp;
           <button
-            className="w-12 h-8 rounded-full bg-fuchsia-900 relative overflow-hidden align-middle"
+            className="w-12 h-8 rounded-full bg-fuchsia-900 relative overflow-hidden align-middle hover:scale-110 transition-transform"
             onClick={summonRainbowCat}
           >
             <div
