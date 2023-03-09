@@ -53,7 +53,7 @@ function App() {
         className="min-h-screen h-[600px] w-screen object-cover object-bottom fixed -z-10"
       />
       <div className="bg-transparent">
-        <section className="container min-h-screen flex flex-col md:flex-row-reverse gap-20 items-center relative">
+        <section className="container min-h-screen flex flex-col md:flex-row-reverse gap-20 items-center justify-center relative">
           <div className="h-1/2 md:h-full md:w-2/3 flex flex-col justify-center">
             <header className="self-center p-10 bg-slate-900">
               <h1 className="font-extrabold text-3xl lg:text-6xl">
@@ -79,7 +79,7 @@ function App() {
         <div className="overflow-hidden">
           <section
             id="about-section"
-            className="container min-h-screen flex flex-col md:flex-row-reverse gap-20 items-center pt-20 relative pb-60"
+            className="container min-h-screen flex flex-col md:flex-row-reverse gap-20 items-center justify-center pt-20 relative pb-60"
           >
             <article className="md:w-2/3">
               <p className="md:text-xl md:py-20">
@@ -133,7 +133,7 @@ function App() {
         <div className="bg-fuchsia-900">
           <section
             id="team-section"
-            className="container min-h-screen flex flex-col md:flex-row gap-20 items-center pt-20 relative pb-60"
+            className="container min-h-screen flex flex-col md:flex-row gap-20 items-center justify-center pt-20 relative pb-60"
           >
             <article className="md:w-2/3">
               <p className="md:text-xl md:py-20">
@@ -158,7 +158,7 @@ function App() {
           id="contact-section"
           className="container min-h-screen flex flex-col justify-between"
         >
-          <div className="flex-grow flex flex-col md:flex-row gap-10 md:gap-20 items-center py-20">
+          <div className="flex-grow flex flex-col md:flex-row gap-10 md:gap-20 items-center justify-center py-20">
             <img src={imgDave} className="md:w-1/3" />
             <article className="md:w-2/3">
               <p className="md:text-2xl">
