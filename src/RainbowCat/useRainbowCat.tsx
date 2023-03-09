@@ -2,7 +2,7 @@ import { useCallback } from "react";
 
 import createCatBoxElement from "./createCatBoxElement";
 
-import "./rainbow_cat.scss";
+import "./RainbowCat.scss";
 
 const DURATION = 2000;
 const INITIAL_X_COORDINATE = 0;
